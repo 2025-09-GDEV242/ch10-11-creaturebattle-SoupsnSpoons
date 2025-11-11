@@ -38,9 +38,12 @@ public abstract class Creature
      * Allows a creature to determine how much damage it is causing in this round of battle
      * @return a value between 1 and str to be used to cause damage to another creature
      */
-    public int attack(){
+    public int attack(){ //as it currently stands, you attack, but will only do 0 points of damage... which is bad.
         // TODO: implement a damage method
-        return 0;
+        int damageToReturn; //local variable
+        damageToReturn = Randomizer.nextInt(str); //I summon you, randomizer! Give me a value for my character's attack based on their strength!
+        
+        return damageToReturn;//be sure we know what value that is though. We gotta remember how much damage we do. It's a key component.
     }
     
     
@@ -50,7 +53,7 @@ public abstract class Creature
      */
     public boolean isAlive() {
         // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+        return (hp > 0); 
     }
     
     /**
@@ -59,7 +62,14 @@ public abstract class Creature
      */
     public boolean isKnockedOut() {
         //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+        boolean unConcious;
+        if(hp <=0){
+        unConcious = true;
+    }
+        else{
+            unConcious = false;
+        }
+        return unConcious;
     }
     
     
@@ -70,6 +80,7 @@ public abstract class Creature
      */
     public void takeDamage(int damage) {
         // TODO: implement this
+        hp = hp - damage;
     }
     
 }

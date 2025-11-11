@@ -25,7 +25,7 @@ public class Human extends Creature
      * return a Human object with values in the appropriate range
      * 
      */
-    public Human()
+    public Human()//this is a 0 parameter constructor, as the Human class knows how to communicate with the creature class.
     {
         // note how the class uses the static randomizer class to
         // generate the values. This localizes the need to know 
