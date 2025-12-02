@@ -1,31 +1,31 @@
 
 
 /**
- * The Demon class implements a wrapper for the base Creature class with the following additions
+ * The Balrog class implements a wrapper for the base Creature class with the following additions
  * Implements a maximum/minimum strength for the creature type [20/5]
  * Implements a maximum/minimum hitpoint total for the creature type [25/5]
  * 
  * @author Bill Crosbie
  * @version 2025-04 v1.1
  */
-public class Demon extends Creature
+public class Balrog extends Demon
 {
     // instance variables - replace the example below with your own
-    private static final int MAX_DEMON_HP = 100;
+    private static final int MAX_DEMON_HP = 200;
     private static final int MIN_DEMON_HP = 25;
     private static final int MAX_DEMON_STR = 40;
     private static final int MIN_DEMON_STR = 20;
 
     /**
-     * Constructor for objects of class Demon -
+     * Constructor for objects of class Balrog -
      * Note that the calling class does not need to know anything about the 
      * requirements of elf minimum and maximum values
      * 
-     * The instantiating class asks for a Demon and the elf class is responsible for
-     * return a Demon object with values in the appropriate range
+     * The instantiating class asks for a Balrog and the elf class is responsible for
+     * return a Balrog object with values in the appropriate range
      * 
      */
-    public Demon()//this is a 0 parameter constructor, as the Demon class knows how to communicate with the creature class.
+    public Balrog()//this is a 0 parameter constructor, as the Balrog class knows how to communicate with the creature class.
     {
         // note how the class uses the static randomizer class to
         // generate the values. This localizes the need to know 
@@ -38,9 +38,6 @@ public class Demon extends Creature
         );
           
     }
-    public Demon (int STR, int HP){
-        super(STR, HP);
-    }
     public int attack(){
         int totalDamage;
         
@@ -49,6 +46,9 @@ public class Demon extends Creature
         //roll the die, and if in range, double the damage done
         if (Randomizer.nextInt(10) <= 2){
             totalDamage = totalDamage + 50;
+        }
+        else{
+            
         }
         
         return totalDamage;
